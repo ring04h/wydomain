@@ -6,12 +6,14 @@ BUG反馈
 > 微博：http://weibo.com/ringzero<br />
 > 邮箱：ringzero@0x557.org<br />
 
-### 扫描结果演示
+扫描结果演示
+-----------------------------------
 > http://wydomain.wuyun.org/report/result_wooyun.org.html
 > http://wydomain.wuyun.org/report/result_xiaomi.com.html
 > http://wydomain.wuyun.org/report/result_ablesky.com.html
     
-### 运行流程
+运行流程
+-----------------------------------
 * 利用FOFA插件获取兄弟域名，并透视获取到的子域名相关二级域名、IP信息
 * 检查域名和兄弟域名是否存在域传送漏洞,存在就遍历zone记录，将结果集推到wydomians数据组
 * 获取可以获取的公开信息 MX、DNS、SOA记录
@@ -23,7 +25,8 @@ BUG反馈
 * 生成数据可视化报告
 * 返回wydomains数据结果
 
-### 运行环境
+运行环境
+-----------------------------------
 * CentOS 6.x
 * Python 2.7.x
 * phantomjs (http://www.phantomjs.org)
