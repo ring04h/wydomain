@@ -33,6 +33,8 @@ INSTALL
 -----------------------------------
 ### 命令行使用
     python wydomain.py wooyun.org
+### 扫描结果报告
+    使用浏览器打开：report/result_wooyun.org.html
 ### 返回结果数据结构
     wydomains = {
      'domain': {
