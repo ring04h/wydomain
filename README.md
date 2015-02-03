@@ -11,6 +11,7 @@
 * 利用bing.com、aizhan.com的接口，查询所有C段旁站的绑定情况
 * 生成数据可视化报告
 * 返回wydomains数据结果
+
 BUG反馈
 -----------------------------------
 > 微博：http://weibo.com/ringzero<br />
