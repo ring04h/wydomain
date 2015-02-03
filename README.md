@@ -22,3 +22,9 @@ INSTALL
     yum install libpcap-devel openssl-devel
     make
     cp dnsdict6 /usr/bin/
+
+BUG反馈
+-----------------------------------
+  微博：http://weibo.com/ringzero
+  邮箱：ringzero@0x557.org
+
