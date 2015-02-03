@@ -1,10 +1,9 @@
 # wydomain
 目标系统信息收集组件，完全模块化，脚本均可拆可并、可合可分的使用！<br />
 ### 扫描结果演示
-    http://wydomain.wuyun.org/report/domain_xiaomi.com.html
-    http://wydomain.wuyun.org/report/domain_xiaomi.com.html
-    http://wydomain.wuyun.org/report/domain_xiaomi.com.html
-    http://wydomain.wuyun.org/report/domain_xiaomi.com.html
+> http://wydomain.wuyun.org/report/domain_wooyun.org.html
+> http://wydomain.wuyun.org/report/domain_xiaomi.com.html
+> http://wydomain.wuyun.org/report/domain_ablesky.com.html
     
 ### 运行流程
 * 利用FOFA插件获取兄弟域名，并透视获取到的子域名相关二级域名、IP信息
