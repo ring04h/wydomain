@@ -1,5 +1,5 @@
 # wydomain
-目标系统信息收集组件，完全模块化，脚本均能可拆可并、可合可分的使用！
+目标系统信息收集组件，完全模块化，脚本均可拆可并、可合可分的使用！
 
 BUG反馈
 -----------------------------------
@@ -31,3 +31,71 @@ INSTALL
 
 使用方法
 -----------------------------------
+### 命令行使用
+    python wydomain.py wooyun.org
+### 返回结果数据结构
+    wydomains = {
+     'domain': {
+          'weibo.com': {
+               'm.weibo.com': {},
+               'wwww.weibo.com': {},
+               'movie.weibo.com': {},
+               'data.weibo.com': {},
+          },
+          'weibo.cn': {
+               'www.weibo.cn': {},
+               'm.weibo.cn': {},
+               'game.weibo.cn': {},
+          },
+          'sina.com.cn': {
+               'news.sina.com.cn': {},
+               'blog.sina.com.cn': {},
+               'my.sina.com.cn': {},
+          },
+          'sina.cn' : {
+               'www.sina.cn': {},
+               'news.sina.cn': {},
+          },
+     },
+     'ipaddress': {
+          '42.62.52.0/24': {
+               '192.168.1.23': {
+                    'www.bizmyth.net': {},
+                    'www.189.com': {},
+               },
+               '192.168.1.58': {
+                    'www.xiaomi.com': {},
+                    'z.aizhan.com': {},
+               },
+          },
+          '42.62.14.0/24': {
+               '192.168.2.23': {
+                    'www.aizhan.net': {},
+                    'www.wanda.cn': {},
+               },
+               '192.168.2.22': {
+                    'wuyun.org': {},
+                    'zone.wooyun.org': {},
+               },
+          },
+     },
+     'mx': {
+          ‘weibo.com': ['mxbiz2.qq.com', 'mxbiz1.qq.com’],
+          ‘weibo.cn': ['mxbiz2.qq.com', 'mxbiz1.qq.com’],
+          ’sina.com.cn': ['mxbiz2.qq.com', 'mxbiz1.qq.com’],
+          ’sina.cn': ['mxbiz2.qq.com', 'mxbiz1.qq.com’]
+     },
+     'dns': {
+          ‘weibo.com': ['ns1.dnsv2.com', 'ns2.dnsv2.com’],
+          ‘weibo.cn': ['ns1.dnsv2.com', 'ns2.dnsv2.com’],
+          ’sina.com.cn': ['ns1.dnsv2.com', 'ns2.dnsv2.com’],
+          ’sina.cn': ['ns1.dnsv2.com', 'ns2.dnsv2.com’],
+     }
+     ’soa': {
+          ‘weibo.com': ['ns1.dnsv2.com', 'ns2.dnsv2.com’],
+          ‘weibo.cn': ['ns1.dnsv2.com', 'ns2.dnsv2.com’],
+          ’sina.com.cn': ['ns1.dnsv2.com', 'ns2.dnsv2.com’],
+          ’sina.cn': ['ns1.dnsv2.com', 'ns2.dnsv2.com’],          
+     }
+
+    }
