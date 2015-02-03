@@ -1,5 +1,11 @@
 # wydomain
 目标系统信息收集组件，完全模块化，脚本均可拆可并、可合可分的使用！<br />
+
+BUG反馈
+-----------------------------------
+> 微博：http://weibo.com/ringzero<br />
+> 邮箱：ringzero@0x557.org<br />
+
 ### 扫描结果演示
 > http://wydomain.wuyun.org/report/result_wooyun.org.html
 > http://wydomain.wuyun.org/report/result_xiaomi.com.html
@@ -16,11 +22,6 @@
 * 利用bing.com、aizhan.com的接口，查询所有C段旁站的绑定情况
 * 生成数据可视化报告
 * 返回wydomains数据结果
-
-BUG反馈
------------------------------------
-> 微博：http://weibo.com/ringzero<br />
-> 邮箱：ringzero@0x557.org<br />
 
 ### 运行环境
 * CentOS 6.x
