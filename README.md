@@ -1,5 +1,11 @@
 # wydomain
 目标系统信息收集组件
+
+BUG反馈
+-----------------------------------
+> 微博：http://weibo.com/ringzero
+> 邮箱：ringzero@0x557.org
+
 ### 运行环境
 * CentOS 6.x
 * Python 2.7.x
@@ -22,9 +28,3 @@ INSTALL
     yum install libpcap-devel openssl-devel
     make
     cp dnsdict6 /usr/bin/
-
-BUG反馈
------------------------------------
-  微博：http://weibo.com/ringzero
-  邮箱：ringzero@0x557.org
-
