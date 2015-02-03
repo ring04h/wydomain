@@ -1,6 +1,6 @@
 # wydomain
 目标系统信息收集组件，完全模块化，脚本均可拆可并、可合可分的使用！<br />
-扫描结果演示：<br />
+    扫描结果演示：<br />
     http://wydomain.wuyun.org/report/domain_xiaomi.com.html<br />
     http://wydomain.wuyun.org/report/domain_xiaomi.com.html<br />
     http://wydomain.wuyun.org/report/domain_xiaomi.com.html<br />
