@@ -1,5 +1,5 @@
 # wydomain
-目标系统信息收集组件
+目标系统信息收集组件，完全模块化，脚本均能可拆可并、可合可分的使用！
 
 BUG反馈
 -----------------------------------
@@ -28,3 +28,6 @@ INSTALL
     yum install libpcap-devel openssl-devel
     make
     cp dnsdict6 /usr/bin/
+
+使用方法
+-----------------------------------
