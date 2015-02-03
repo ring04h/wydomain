@@ -40,7 +40,7 @@ INSTALL
     make
     cp dnsdict6 /usr/bin/
 
-使用方法
+USAGE
 -----------------------------------
 ### 命令行使用
     python wydomain.py wooyun.org
