@@ -45,7 +45,7 @@ BUG反馈
 ### 扫描结果报告
     使用浏览器打开：report/result_wooyun.org.html
 
-安装 (CentOS)
+CentOS 安装
 -----------------------------------
 ### 安装git & 下载wydomian
     yum -y install git
@@ -73,7 +73,7 @@ BUG反馈
     make
     cp dnsdict6 /usr/bin/
 
-安装 (Kali 自带dnsdict6)
+Kali 安装(自带dnsdict6)
 -----------------------------------
 ### 安装git & 下载wydomian
     apt-get install git
@@ -93,7 +93,7 @@ BUG反馈
     yum install openssl-devel freetype-devel fontconfig-devel
     cp ./bin/phantomjs /usr/bin/
     
-安装 (Ubuntu & Debian Linux)
+Ubuntu & Debian Linux 安装
 -----------------------------------
 ### 安装git & 下载wydomian
     apt-get install git
