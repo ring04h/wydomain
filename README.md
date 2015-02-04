@@ -38,7 +38,14 @@ BUG反馈
 * phantomjs (http://www.phantomjs.org)
 * dnsdict6 (https://www.thc.org/thc-ipv6/)
 
-INSTALL
+USAGE
+-----------------------------------
+### 命令行使用
+    python wydomain.py wooyun.org
+### 扫描结果报告
+    使用浏览器打开：report/result_wooyun.org.html
+
+INSTALL (CentOS)
 -----------------------------------
 ### 安装git & 下载wydomian
     yum -y install git
@@ -58,7 +65,7 @@ INSTALL
     yum install openssl-devel freetype-devel fontconfig-devel
     cp ./bin/phantomjs /usr/bin/
     
-### CentOS 安装dnsdict6
+### 安装dnsdict6
     wget http://www.thc.org/releases/thc-ipv6-2.7.tar.gz
     tar zvxf thc-ipv6-2.7.tar.gz
     cd thc-ipv6-2.7
@@ -66,21 +73,56 @@ INSTALL
     make
     cp dnsdict6 /usr/bin/
 
-### Ubuntu & Kali 安装dnsdict6
+INSTALL (Kali 自带dnsdict6)
+-----------------------------------
+### 安装git & 下载wydomian
+    apt-get install git
+    git clone https://github.com/ring04h/wydomain.git
+### 安装phantomjs
+    http://phantomjs.org/download.html
+    
+    32位系统
+    wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-i686.tar.bz2
+    tar vxf phantomjs-1.9.8-linux-i686.tar.bz2
+    yum install openssl-devel freetype-devel fontconfig-devel
+    cp ./bin/phantomjs /usr/bin/
+    
+    64位系统
+    wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2
+    tar vxf phantomjs-1.9.8-linux-x86_64.tar.bz2
+    yum install openssl-devel freetype-devel fontconfig-devel
+    cp ./bin/phantomjs /usr/bin/
+    
+INSTALL (Ubuntu & Debian Linux)
+-----------------------------------
+### 安装git & 下载wydomian
+    apt-get install git
+    git clone https://github.com/ring04h/wydomain.git
+### 安装phantomjs
+    http://phantomjs.org/download.html
+    
+    32位系统
+    wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-i686.tar.bz2
+    tar vxf phantomjs-1.9.8-linux-i686.tar.bz2
+    yum install openssl-devel freetype-devel fontconfig-devel
+    cp ./bin/phantomjs /usr/bin/
+    
+    64位系统
+    wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2
+    tar vxf phantomjs-1.9.8-linux-x86_64.tar.bz2
+    yum install openssl-devel freetype-devel fontconfig-devel
+    cp ./bin/phantomjs /usr/bin/
+    
+### 安装dnsdict6
     wget http://www.thc.org/releases/thc-ipv6-2.7.tar.gz
     tar zvxf thc-ipv6-2.7.tar.gz
     cd thc-ipv6-2.7
-    sudo apt-get install libpcap-dev
-    sudo apt-get install libssl-dev
+    sudo apt-get install libpcap-dev libssl-dev
     make
     sudo cp dnsdict6 /usr/bin/
 
-USAGE
+数据结构
 -----------------------------------
-### 命令行使用
-    python wydomain.py wooyun.org
-### 扫描结果报告
-    使用浏览器打开：report/result_wooyun.org.html
 ### 返回结果数据结构
     wydomains = {
      'domain': {
