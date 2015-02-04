@@ -20,7 +20,7 @@ BUG反馈
 扫描结果演示
 -----------------------------------
 > http://wydomain.wuyun.org/report/result_wooyun.org.html
-> http://wydomain.wuyun.org/report/result_xiaomi.com.html
+> http://wydomain.wuyun.org/report/result_yiche.com.html
 > http://wydomain.wuyun.org/report/result_ablesky.com.html
     
 运行流程
