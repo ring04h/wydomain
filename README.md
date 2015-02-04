@@ -1,6 +1,19 @@
 # wydomain
 目标系统信息收集组件，完全模块化，脚本均可拆可并、可合可分的使用！<br />
 
+运行流程
+-----------------------------------
+* 利用FOFA插件获取兄弟域名，并透视获取到的子域名相关二级域名、IP信息
+* 检查域名和兄弟域名是否存在域传送漏洞,存在就遍历zone记录，将结果集推到wydomians数据组
+* 获取可以获取的公开信息 MX、DNS、SOA记录
+* 子域名字典暴力穷举域名(60000条字典[domain_default.csv])
+* 利用第三方API查询子域名(links、alexa、bing、google、sitedossier、netcraft)
+* 逐个域名处理TXT记录, 加入总集合
+* 解析获取到的所有子域名，生成IP列表集合，截取成RFC地址C段标准(42.42.42.0/24)
+* 利用bing.com、aizhan.com的接口，查询所有C段旁站的绑定情况
+* 生成数据可视化报告
+* 返回wydomains数据结果
+
 更新信息
 -----------------------------------
 一、有反馈说卡在子域名暴力穷举上，更新了默认字典的大小，启用大字典方法如下<br />
@@ -23,18 +36,6 @@ BUG反馈
 > http://wydomain.wuyun.org/report/result_yiche.com.html
 > http://wydomain.wuyun.org/report/result_ablesky.com.html
     
-运行流程
------------------------------------
-* 利用FOFA插件获取兄弟域名，并透视获取到的子域名相关二级域名、IP信息
-* 检查域名和兄弟域名是否存在域传送漏洞,存在就遍历zone记录，将结果集推到wydomians数据组
-* 获取可以获取的公开信息 MX、DNS、SOA记录
-* 子域名字典暴力穷举域名(60000条字典[domain_default.csv])
-* 利用第三方API查询子域名(links、alexa、bing、google、sitedossier、netcraft)
-* 逐个域名处理TXT记录, 加入总集合
-* 解析获取到的所有子域名，生成IP列表集合，截取成RFC地址C段标准(42.42.42.0/24)
-* 利用bing.com、aizhan.com的接口，查询所有C段旁站的绑定情况
-* 生成数据可视化报告
-* 返回wydomains数据结果
 
 运行环境
 -----------------------------------
