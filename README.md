@@ -34,6 +34,9 @@ BUG反馈
 
 INSTALL
 -----------------------------------
+### 安装git & 下载wydomian
+    yum -y install git
+    git clone https://github.com/ring04h/wydomain.git
 ### 安装phantomjs
     http://phantomjs.org/download.html
     
