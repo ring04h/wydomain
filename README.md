@@ -89,13 +89,11 @@ Kali 安装(自带dnsdict6)
     32位系统
     wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-i686.tar.bz2
     tar vxf phantomjs-1.9.8-linux-i686.tar.bz2
-    yum install openssl-devel freetype-devel fontconfig-devel
     cp ./bin/phantomjs /usr/bin/
     
     64位系统
     wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2
     tar vxf phantomjs-1.9.8-linux-x86_64.tar.bz2
-    yum install openssl-devel freetype-devel fontconfig-devel
     cp ./bin/phantomjs /usr/bin/
     
 Ubuntu & Debian Linux 安装
@@ -109,13 +107,13 @@ Ubuntu & Debian Linux 安装
     32位系统
     wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-i686.tar.bz2
     tar vxf phantomjs-1.9.8-linux-i686.tar.bz2
-    yum install openssl-devel freetype-devel fontconfig-devel
+    sudo apt-get install libsqlite3-dev libfontconfig1-dev libicu-dev libfreetype6 libssl-dev libpng-dev libjpeg-dev
     cp ./bin/phantomjs /usr/bin/
     
     64位系统
     wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2
     tar vxf phantomjs-1.9.8-linux-x86_64.tar.bz2
-    yum install openssl-devel freetype-devel fontconfig-devel
+    sudo apt-get install libsqlite3-dev libfontconfig1-dev libicu-dev libfreetype6 libssl-dev libpng-dev libjpeg-dev
     cp ./bin/phantomjs /usr/bin/
     
 ### 安装dnsdict6
