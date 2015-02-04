@@ -36,6 +36,14 @@ INSTALL
 -----------------------------------
 ### 安装phantomjs
     http://phantomjs.org/download.html
+    
+    32位系统
+    wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-i686.tar.bz2
+    tar vxf phantomjs-1.9.8-linux-i686.tar.bz2
+    yum install openssl-devel freetype-devel fontconfig-devel
+    cp ./bin/phantomjs /usr/bin/
+    
+    64位系统
     wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2
     tar vxf phantomjs-1.9.8-linux-x86_64.tar.bz2
     yum install openssl-devel freetype-devel fontconfig-devel
