@@ -114,9 +114,47 @@ def gender_domian_view(wydomains):
 				return !treeNode.isParent;
 			};
 
-			$(document).ready(function(){
-				$.fn.zTree.init($("#treeDemo"), setting, zNodes);
-			});
+function expandNode(e) {
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+			type = e.data.type,
+			nodes = zTree.getSelectedNodes();
+			if (type.indexOf("All")<0 && nodes.length == 0) {
+				alert("请先选择一个父节点");
+			}
+
+			if (type == "expandAll") {
+				zTree.expandAll(true);
+			} else if (type == "collapseAll") {
+				zTree.expandAll(false);
+			} else {
+				var callbackFlag = $("#callbackTrigger").attr("checked");
+				for (var i=0, l=nodes.length; i<l; i++) {
+					zTree.setting.view.fontCss = {};
+					if (type == "expand") {
+						zTree.expandNode(nodes[i], true, null, null, callbackFlag);
+					} else if (type == "collapse") {
+						zTree.expandNode(nodes[i], false, null, null, callbackFlag);
+					} else if (type == "toggle") {
+						zTree.expandNode(nodes[i], null, null, null, callbackFlag);
+					} else if (type == "expandSon") {
+						zTree.expandNode(nodes[i], true, true, null, callbackFlag);
+					} else if (type == "collapseSon") {
+						zTree.expandNode(nodes[i], false, true, null, callbackFlag);
+					}
+				}
+			}
+		}
+
+	$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+			$("#expandSonBtn").bind("click", {type:"expandSon"}, expandNode);
+			$("#collapseSonBtn").bind("click", {type:"collapseSon"}, expandNode);
+			$("#expandAllBtn").bind("click", {type:"expandAll"}, expandNode);
+			$("#collapseAllBtn").bind("click", {type:"collapseAll"}, expandNode);
+			$("#expandAllBtn").bind("click", {type:"expandAll"}, expandNode);
+			$("#collapseAllBtn").bind("click", {type:"collapseAll"}, expandNode);
+		});
+
 			//-->
 		</SCRIPT>
 
@@ -125,6 +163,11 @@ def gender_domian_view(wydomains):
 	<BODY>
 	<div>
 		<div>
+		<a id="expandAllBtn" href="#" title="不管你有多NB，统统都要听我的！！" onclick="return false;">全展开</a>
+		<a id="collapseAllBtn" href="#" title="不管你有多NB，统统都要听我的！！" onclick="return false;">全折叠</a>
+		子节点 [ <a id="expandSonBtn" href="#" title="不想展开我就不展开你..." onclick="return false;">展开</a> 
+		<a id="collapseSonBtn" href="#" title="不想折叠我就不折叠你..." onclick="return false;">折叠</a> ]<br/>
+		<hr>
 			<ul id="treeDemo" class="ztree"></ul>
 		</div>
 	</div>
