@@ -33,19 +33,19 @@ BUG反馈
 
 运行环境
 -----------------------------------
-* CentOS 6.x
+* CentOS、Kali Linux、Ubuntu、Debian
 * Python 2.7.x
 * phantomjs (http://www.phantomjs.org)
 * dnsdict6 (https://www.thc.org/thc-ipv6/)
 
-USAGE
+使用方法
 -----------------------------------
 ### 命令行使用
     python wydomain.py wooyun.org
 ### 扫描结果报告
     使用浏览器打开：report/result_wooyun.org.html
 
-INSTALL (CentOS)
+安装 (CentOS)
 -----------------------------------
 ### 安装git & 下载wydomian
     yum -y install git
@@ -73,7 +73,7 @@ INSTALL (CentOS)
     make
     cp dnsdict6 /usr/bin/
 
-INSTALL (Kali 自带dnsdict6)
+安装 (Kali 自带dnsdict6)
 -----------------------------------
 ### 安装git & 下载wydomian
     apt-get install git
@@ -93,7 +93,7 @@ INSTALL (Kali 自带dnsdict6)
     yum install openssl-devel freetype-devel fontconfig-devel
     cp ./bin/phantomjs /usr/bin/
     
-INSTALL (Ubuntu & Debian Linux)
+安装 (Ubuntu & Debian Linux)
 -----------------------------------
 ### 安装git & 下载wydomian
     apt-get install git
