@@ -3,10 +3,9 @@
 
 更新信息
 -----------------------------------
-有反馈说卡在子域名暴力穷举上，更新了默认字典的大小，启用大字典方法如下<br />
+一、有反馈说卡在子域名暴力穷举上，更新了默认字典的大小，启用大字典方法如下<br />
 > mv domain_default.csv domain_default.csv.bak<br />
 > mv domain_larger.csv domain_default.csv<br />
-<br />
 
 BUG反馈
 -----------------------------------
@@ -59,13 +58,22 @@ INSTALL
     yum install openssl-devel freetype-devel fontconfig-devel
     cp ./bin/phantomjs /usr/bin/
     
-### 安装dnsdict6
+### CentOS 安装dnsdict6
     wget http://www.thc.org/releases/thc-ipv6-2.7.tar.gz
     tar zvxf thc-ipv6-2.7.tar.gz
     cd thc-ipv6-2.7
     yum install libpcap-devel openssl-devel
     make
     cp dnsdict6 /usr/bin/
+
+### Ubuntu & Kali 安装dnsdict6
+    wget http://www.thc.org/releases/thc-ipv6-2.7.tar.gz
+    tar zvxf thc-ipv6-2.7.tar.gz
+    cd thc-ipv6-2.7
+    sudo apt-get install libpcap-dev
+    sudo apt-get install libssl-dev
+    make
+    sudo cp dnsdict6 /usr/bin/
 
 USAGE
 -----------------------------------
