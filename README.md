@@ -3,7 +3,7 @@
 
 更新信息
 -----------------------------------
-    1. 有反馈说卡在子域名暴力穷举上，更新了默认字典的大小，启用大字典方法如下：
+* 有反馈说卡在子域名暴力穷举上，更新了默认字典的大小，启用大字典方法如下：
     mv domain_default.csv domain_default.csv.bak
     mv domain_larger.csv domain_default.csv
 BUG反馈
