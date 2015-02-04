@@ -4,8 +4,8 @@
 更新信息
 -----------------------------------
 有反馈说卡在子域名暴力穷举上，更新了默认字典的大小，启用大字典方法如下<br />
-> mv domain_default.csv domain_default.csv.bak
-> mv domain_larger.csv domain_default.csv
+> mv domain_default.csv domain_default.csv.bak<br />
+> mv domain_larger.csv domain_default.csv<br />
 <br />
 
 BUG反馈
