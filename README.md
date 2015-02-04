@@ -47,6 +47,7 @@ BUG反馈
 -----------------------------------
 ### 命令行使用
     python wydomain.py wooyun.org
+    
     建议后台运行，然后去睡觉，一觉醒来会有新发现！
     nohup python wydomain.py wooyun.org &
 ### 扫描结果报告
