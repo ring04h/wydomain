@@ -321,13 +321,14 @@ def start_wydomain(domain):
 	try:
 		file_object = open(filepath, 'w')
 		file_object.writelines(html_content)
+		file_object.close()
 	except Exception, e:
 		return "error"
 	finally:
 		print '-' * 50
 		print "* Report is generated"
 		print '-' * 50
-		file_object.close()
+		# file_object.close()
 
 	return wydomains
 
