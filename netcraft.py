@@ -64,7 +64,7 @@ def http_request_get(url):
 			trycnt += 1
 			if trycnt >= retrycnt:
 				# print 'retry overflow'
-				return "retryover"
+				return {'html':"", 'url':""}
 
 def get_domains(content):
 	domain = []

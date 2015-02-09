@@ -55,6 +55,7 @@ dns_whitelist = [
 	'xinnet.com',
 	'hichina.com',
 	'360safe.com',
+	'iidns.com',
 ]
 
 
