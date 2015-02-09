@@ -65,9 +65,9 @@ def start_wydomain(domain):
 			wydomains['soa'][pdomain] = []
 			
 			# 开始逐个处理FOFA域名查询的结果信息
-			for subdomain in fofa_result['partner'][pdomain]['domain']:
+			for subdomain in fofa_result['partner'][pdomain]['domains']:
 				 wydomains['domain'][pdomain][subdomain] = get_a_record(subdomain)
-			for ipaddr in fofa_result['partner'][pdomain]['ipaddr']:
+			for ipaddr in fofa_result['partner'][pdomain]['ipaddrs']:
 				ipaddr = ipaddr.split('.')
 				ipaddr[-1] = '0/24'
 				ipaddr = '.'.join(ipaddr)
