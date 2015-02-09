@@ -32,7 +32,7 @@ def gender_domian_view(wydomains):
 	html_contend = html_contend + '{ id:"1", pId:"0", name:"Domains", open:true,},'
 	for domain in wydomains['domain'].keys():
 		sid = str(did) + '-1'
-		html_contend = html_contend + '{ id:"%s", pId:"%s", name:"%s", open:true,},' % (sid, pid, domain)
+		html_contend = html_contend + '{ id:"%s", pId:"%s", name:"%s"},' % (sid, pid, domain)
 		for subdomain in wydomains['domain'][domain].keys():
 			did += 1
 			mid = str(pid) + '-' + str(did)
