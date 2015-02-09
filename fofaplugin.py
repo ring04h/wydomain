@@ -159,7 +159,7 @@ def get_partner_domain(domain):
 	query_domain = domain.split(',')
 	if len(query_domain) > 1: # 多域名
 		# fofa 已经不再对外开放，对外之后再做专版更新
-		result['partner'] = {domain:None}
+		result['partner'] = {}
 		result['status'] = False
 		result['info'] = 'fofa is down'
 		for domainline in query_domain:
