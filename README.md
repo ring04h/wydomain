@@ -36,9 +36,9 @@ BUG反馈
 
 扫描结果演示
 -----------------------------------
-> http://wydomain.wuyun.org/report/result_wooyun.org.html
-> http://wydomain.wuyun.org/report/result_yiche.com.html
-> http://wydomain.wuyun.org/report/result_ablesky.com.html
+> http://wydomain.wuyun.org/report/result_wooyun.org.html<br />
+> http://wydomain.wuyun.org/report/result_yiche.com.html<br />
+> http://wydomain.wuyun.org/report/result_ablesky.com.html<br />
     
 
 运行环境
