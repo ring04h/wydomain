@@ -70,6 +70,9 @@ def func(ipaddr):
 	return reverse_result
 
 def ip2domain_start(ip_blocks):
+	# 只接受/24结尾的IP段，其它抛弃
+	if not ip_blocks.endswith('/24'):
+		return {}
 	# ip_blocks = '113.108.16.0/24'
 	ip4txt = ip_blocks.split('/')[0] # 处理掉RFC的IP段标准
 	ip4txt = ip4txt.split('.')
