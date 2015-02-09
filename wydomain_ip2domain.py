@@ -43,7 +43,7 @@ def make_ips_c_block(ipaddr):
 	if len(ipaddr) > 3:
 		ipaddr[3] = '0'
 		ipaddr = '.'.join(ipaddr)
-		address[ipaddr] = gen_ips(ip2num(ipaddr),ip2num(ipaddr) + 254)
+		address[ipaddr] = gen_ips(ip2num(ipaddr),ip2num(ipaddr) + 10)
 		return address
 	else:
 		return {}
@@ -70,9 +70,16 @@ def func(ipaddr):
 	return reverse_result
 
 def ip2domain_start(ip_blocks):
+
 	# 只接受/24结尾的IP段，其它抛弃
 	if not ip_blocks.endswith('/24'):
 		return {}
+
+	# 只接受IP合规校验通过的，其它抛弃
+	ip4txt = ip_blocks.split('/')[0] # 处理掉RFC的IP段标准
+	if not ip_check(ip4txt):
+		return {}
+
 	# ip_blocks = '113.108.16.0/24'
 	ip4txt = ip_blocks.split('/')[0] # 处理掉RFC的IP段标准
 	ip4txt = ip4txt.split('.')
