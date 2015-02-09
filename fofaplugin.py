@@ -155,53 +155,65 @@ def check_website_status(url):
 
 def get_partner_domain(domain):
 
-	timeout = 90
-	runtime = 3
-
-	if check_website_status('http://fofa.so')['status'] == True:
-
-		# 发起查询请求
-		payload = {'taskaction' : 'alldomains', 'domain' : domain}
-		content = http_request_post('http://fofa.so/lab/addtask/', payload)
-		taskinfo = content.text
-		jobId = json.loads(taskinfo)['jobId']
-		domian_jobInfo_url = 'http://fofa.so/lab/gettask?jobId=%s&t=%s' % (jobId, int(time.time()))
-		partner_domain = []
-
-		while True:
-			if timeout >= runtime:
-				partner_result = json.loads(http_request_get(domian_jobInfo_url)['html'])
-				if partner_result['finished']:
-					partner_domain = partner_result['msgs']
-					break
-				print 'searched %ss' % runtime
-				time.sleep(3)
-				runtime += 3
-			else:
-				print '<<<timeout>>>'
-				break
-
-		if len(partner_domain) > 0:
-			partner_domain.remove('start dumping...')
-			partner_domain.remove('<<<finished>>>')
-
-		if len(partner_domain) > 0:
-			partner_domain.append(domain)
-			result['partner'] = result.fromkeys(partner_domain)
-			for domainline in partner_domain:
-				get_sub_domain(domainline)
-		else:
-			# 没有兄弟域名，直接进入子域名查询
-			result['partner'] = {domain:None}
-			get_sub_domain(domain)
-
-	else:
-		# print 'fofa is down'
+	# 判断传入的值是多域名还是单域名
+	query_domain = domain.split(',')
+	if len(query_domain) > 1: # 多域名
+		# fofa 已经不再对外开放，对外之后再做专版更新
 		result['partner'] = {domain:None}
 		result['status'] = False
 		result['info'] = 'fofa is down'
-		result['partner'][domain] = {'domains':[],'ipaddrs':[]}
+		for domainline in query_domain:
+			result['partner'][domainline] = {'domains':[],'ipaddrs':[]}
 		return ""
+	else: # 单域名
+
+		timeout = 90
+		runtime = 3
+
+		if check_website_status('http://fofa.so')['status'] == True:
+
+			# 发起查询请求
+			payload = {'taskaction' : 'alldomains', 'domain' : domain}
+			content = http_request_post('http://fofa.so/lab/addtask/', payload)
+			taskinfo = content.text
+			jobId = json.loads(taskinfo)['jobId']
+			domian_jobInfo_url = 'http://fofa.so/lab/gettask?jobId=%s&t=%s' % (jobId, int(time.time()))
+			partner_domain = []
+
+			while True:
+				if timeout >= runtime:
+					partner_result = json.loads(http_request_get(domian_jobInfo_url)['html'])
+					if partner_result['finished']:
+						partner_domain = partner_result['msgs']
+						break
+					print 'searched %ss' % runtime
+					time.sleep(3)
+					runtime += 3
+				else:
+					print '<<<timeout>>>'
+					break
+
+			if len(partner_domain) > 0:
+				partner_domain.remove('start dumping...')
+				partner_domain.remove('<<<finished>>>')
+
+			if len(partner_domain) > 0:
+				partner_domain.append(domain)
+				result['partner'] = result.fromkeys(partner_domain)
+				for domainline in partner_domain:
+					get_sub_domain(domainline)
+			else:
+				# 没有兄弟域名，直接进入子域名查询
+				result['partner'] = {domain:None}
+				get_sub_domain(domain)
+
+		else:
+			# print 'fofa is down'
+			result['partner'] = {domain:None}
+			result['status'] = False
+			result['info'] = 'fofa is down'
+			result['partner'][domain] = {'domains':[],'ipaddrs':[]}
+			return ""
 
 def get_sub_domain(domain):
 	# print 'start process sub domain: %s' % domain
