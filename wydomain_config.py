@@ -37,10 +37,15 @@ dns_server = {
 }
 
 mx_whitelist = [
-	# 'qq.com',
+	'qq.com',
 	'163.com',
 	'googlemail.com',
 	'outlook.com',
+]
+
+ip_whitelist = [
+	'192.168.',
+	'10.'
 ]
 
 dns_whitelist = [
@@ -48,7 +53,8 @@ dns_whitelist = [
 	'dnsv3.com',
 	'dnsv2.com',
 	'xinnet.com',
-	'hichina.com'
+	'hichina.com',
+	'360safe.com',
 ]
 
 
