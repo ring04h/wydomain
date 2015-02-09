@@ -43,7 +43,7 @@ def make_ips_c_block(ipaddr):
 	if len(ipaddr) > 3:
 		ipaddr[3] = '0'
 		ipaddr = '.'.join(ipaddr)
-		address[ipaddr] = gen_ips(ip2num(ipaddr),ip2num(ipaddr) + 10)
+		address[ipaddr] = gen_ips(ip2num(ipaddr),ip2num(ipaddr) + 254)
 		return address
 	else:
 		return {}
