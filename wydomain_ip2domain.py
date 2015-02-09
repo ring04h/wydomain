@@ -30,17 +30,23 @@ def gen_ips(start, end):
 	# if num & 0xff 过滤掉 最后一段为 0 的IP
 	return [num2ip(num) for num in range(start, end + 1) if num & 0xff]
 
+def ip_check(ip):
+	'''检查IP是否合规'''
+	q = ip.split('.')
+	return len(q) == 4 and len(filter(lambda x: x >= 0 and x <= 255, \
+		map(int, filter(lambda x: x.isdigit(), q)))) == 4
+
 def make_ips_c_block(ipaddr):
-	try:
-		address = {}
-		ipaddr = ipaddr.split('.')
+	'''生成C段IP地址'''
+	address = {}
+	ipaddr = ipaddr.split('.')
+	if len(ipaddr) > 3:
 		ipaddr[3] = '0'
 		ipaddr = '.'.join(ipaddr)
 		address[ipaddr] = gen_ips(ip2num(ipaddr),ip2num(ipaddr) + 254)
 		return address
-	except Exception, e:
-		address = {ipaddr: {}}
-    	return address
+	else:
+		return {}
 
 def func(ipaddr):
 	reverse_result = {'bing':{},'aizhan':{}}
