@@ -30,6 +30,10 @@ BUG反馈
 > 微博：http://weibo.com/ringzero<br />
 > 邮箱：ringzero@0x557.org<br />
 
+新版本结果演示
+-----------------------------------
+> http://wydomain.wuyun.org/report/result_yiche.com,yiche.cn,bitauto.com,huimaiche.com,yichemall.com,taoche.com.html
+
 扫描结果演示
 -----------------------------------
 > http://wydomain.wuyun.org/report/result_wooyun.org.html
