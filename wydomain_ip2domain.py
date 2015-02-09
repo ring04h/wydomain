@@ -31,13 +31,16 @@ def gen_ips(start, end):
 	return [num2ip(num) for num in range(start, end + 1) if num & 0xff]
 
 def make_ips_c_block(ipaddr):
-	address = {}
-	ipaddr = ipaddr.split('.')
-	ipaddr[3] = '0'
-	ipaddr = '.'.join(ipaddr)
-
-	address[ipaddr] = gen_ips(ip2num(ipaddr),ip2num(ipaddr) + 254)
-	return address
+	try:
+		address = {}
+		ipaddr = ipaddr.split('.')
+		ipaddr[3] = '0'
+		ipaddr = '.'.join(ipaddr)
+		address[ipaddr] = gen_ips(ip2num(ipaddr),ip2num(ipaddr) + 254)
+		return address
+	except Exception, e:
+		address = {ipaddr: {}}
+    	return address
 
 def func(ipaddr):
 	reverse_result = {'bing':{},'aizhan':{}}

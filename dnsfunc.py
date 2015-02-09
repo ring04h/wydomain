@@ -19,6 +19,12 @@ def check_mx_whitelist(varname):
 			return True
 	return False
 
+def check_ip_whitelist(varname):
+	for whiteline in ip_whitelist:
+		if varname.startswith(whiteline):
+			return True
+	return False
+
 def check_whitelist(varname):
 	for whiteline in dns_whitelist:
 		if whiteline in varname:
