@@ -139,12 +139,13 @@ def start_wydomain(domain):
 						ipaddr = '.'.join(ipaddr)
 						wydomains['ipaddress'][ipaddr] = {}
 				
-				# 进入IP地址转换成C段，并查询整个C段IP绑定列表
-				for ip_c_block in wydomains['ipaddress']:
-					if not check_ip_whitelist(ip_c_block):
-						ip2domain_result = ip2domain_start(ip_c_block)
-						for ipaddress in ip2domain_result.keys():
-							wydomains['ipaddress'][ip_c_block][ipaddress] = ip2domain_result[ipaddress]
+				# 生成一个子域名的IP地址，继续处理其它域名，获得更多的IP，再统一递归查询
+				# # 进入IP地址转换成C段，并查询整个C段IP绑定列表
+				# for ip_c_block in wydomains['ipaddress']:
+				# 	if not check_ip_whitelist(ip_c_block):
+				# 		ip2domain_result = ip2domain_start(ip_c_block)
+				# 		for ipaddress in ip2domain_result.keys():
+				# 			wydomains['ipaddress'][ip_c_block][ipaddress] = ip2domain_result[ipaddress]
 
 				# 处理完毕，等待数据可视化后处理 wydomains 数组
 
@@ -180,12 +181,14 @@ def start_wydomain(domain):
 				for ipaddr in subdomains_result['ipaddress']:
 					wydomains['ipaddress'][ipaddr] = {}
 
-				# 进入IP地址转换成C段，并查询整个C段IP绑定列表
-				for ip_c_block in wydomains['ipaddress']:
-					if not check_ip_whitelist(ip_c_block):
-						ip2domain_result = ip2domain_start(ip_c_block)
-						for ipaddress in ip2domain_result.keys():
-							wydomains['ipaddress'][ip_c_block][ipaddress] = ip2domain_result[ipaddress]
+				# 获取并处理了传递进来的子域名可得到的信息，全部结束后，统一用bing.com、aizhan.com查询C段IP域名信息
+
+		# 进入IP地址转换成C段，并查询整个C段IP绑定列表
+		for ip_c_block in wydomains['ipaddress']:
+			if not check_ip_whitelist(ip_c_block):
+				ip2domain_result = ip2domain_start(ip_c_block)
+				for ipaddress in ip2domain_result.keys():
+					wydomains['ipaddress'][ip_c_block][ipaddress] = ip2domain_result[ipaddress]
 
 	else:
 		# 没有兄弟域名
