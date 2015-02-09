@@ -141,7 +141,7 @@ def start_wydomain(domain):
 				
 				# 进入IP地址转换成C段，并查询整个C段IP绑定列表
 				for ip_c_block in wydomains['ipaddress']:
-					if not check_ip_whitelist(ip_blocks):
+					if not check_ip_whitelist(ip_c_block):
 						ip2domain_result = ip2domain_start(ip_c_block)
 						for ipaddress in ip2domain_result.keys():
 							wydomains['ipaddress'][ip_c_block][ipaddress] = ip2domain_result[ipaddress]
@@ -182,7 +182,7 @@ def start_wydomain(domain):
 
 				# 进入IP地址转换成C段，并查询整个C段IP绑定列表
 				for ip_c_block in wydomains['ipaddress']:
-					if not check_ip_whitelist(ip_blocks):
+					if not check_ip_whitelist(ip_c_block):
 						ip2domain_result = ip2domain_start(ip_c_block)
 						for ipaddress in ip2domain_result.keys():
 							wydomains['ipaddress'][ip_c_block][ipaddress] = ip2domain_result[ipaddress]
@@ -266,7 +266,7 @@ def start_wydomain(domain):
 				# 进入IP地址转换成C段，并查询整个C段IP绑定列表
 				for ip_c_block in wydomains['ipaddress']:
 					# 检查IP是否是内网IP，如果是，别查询了
-					if not check_ip_whitelist(ip_blocks):
+					if not check_ip_whitelist(ip_c_block):
 						ip2domain_result = ip2domain_start(ip_c_block)
 						for ipaddress in ip2domain_result.keys():
 							wydomains['ipaddress'][ip_c_block][ipaddress] = ip2domain_result[ipaddress]
@@ -308,7 +308,7 @@ def start_wydomain(domain):
 				# 进入IP地址转换成C段，并查询整个C段IP绑定列表
 				for ip_c_block in wydomains['ipaddress']:
 					# 检查IP是否是内网IP，如果是，别查询了
-					if not check_ip_whitelist(ip_blocks):
+					if not check_ip_whitelist(ip_c_block):
 						ip2domain_result = ip2domain_start(ip_c_block)
 						for ipaddress in ip2domain_result.keys():
 							wydomains['ipaddress'][ip_c_block][ipaddress] = ip2domain_result[ipaddress]
