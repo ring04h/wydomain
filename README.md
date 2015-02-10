@@ -22,7 +22,7 @@
 
 二、提升执行速度<br />
 wydomain_ip2domain.py 第71行，修改processes=你认为能接受的进程数<br />
-> 多进程，服务器要是好的话，可以提高，问题是bing.com可能会因为频率过高被封
+> 多进程，服务器要是好的话，可以提高，问题是bing.com可能会因为频率过高被封<br />
 > pool = multiprocessing.Pool(processes=10)
 
 BUG反馈
