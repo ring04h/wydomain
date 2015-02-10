@@ -32,7 +32,7 @@ BUG反馈
 
 新版本结果演示
 -----------------------------------
-> http://wydomain.wuyun.org/report/result_yiche.com,yiche.cn,bitauto.com,huimaiche.com,yichemall.com,taoche.com.html
+> http://wydomain.wuyun.org/report/result_xiaomi.com,xiaomi.cn,duokan.com.html
 
 扫描结果演示
 -----------------------------------
