@@ -1,5 +1,6 @@
-### subdomain name top 3000 
-mysql>select SUBSTR(domain,1,LOCATE('.',domain)-1) pre,count(*) cnt from sys_domain where parent_id > 0 group by pre order by c desc limit 0,3000;
+subdomain name top 3000 
+-------------------------------
+> select SUBSTR(domain,1,LOCATE('.',domain)-1) pre,count(*) cnt from sys_domain where parent_id > 0 group by pre order by c desc limit 0,3000;
 
 | pre      |    cnt |
 | :-------- | --------:|
