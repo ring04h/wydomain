@@ -1,7 +1,8 @@
-mysql> select SUBSTR(domain,1,LOCATE('.',domain)-1) pre,count(*) c from sys_domain where parent_id > 0 group by pre order by c desc limit 0,3000;
-+----------------+---------+
-| pre            | c       |
-+----------------+---------+
+``` mysql
+select SUBSTR(domain,1,LOCATE('.',domain)-1) pre,count(*) cnt from sys_domain where parent_id > 0 group by pre order by c desc limit 0,3000;
+```
+| pre      |    cnt |
+| :-------- | --------:|
 | www            | 1024282 |
 | mail           |  451476 |
 | ftp            |  187225 |
@@ -3002,5 +3003,5 @@ mysql> select SUBSTR(domain,1,LOCATE('.',domain)-1) pre,count(*) c from sys_doma
 | alcor          |    2285 |
 | bd123002       |    2285 |
 | kaoshi         |    2285 |
-+----------------+---------+
+
 3000 rows in set (3 min 49.57 sec)
