@@ -50,6 +50,8 @@ import sys
 import random
 import requests
 import json
+import time
+import re
 
 # 动态配置项
 retrycnt = 3	# 重试次数
@@ -182,7 +184,7 @@ def get_partner_domain(domain):
 
 			while True:
 				if timeout >= runtime:
-					partner_result = json.loads(http_request_get(domian_jobInfo_url)['html'])
+					partner_result = json.loads(http_request_get(domian_jobInfo_url).text)
 					if partner_result['finished']:
 						partner_domain = partner_result['msgs']
 						break
