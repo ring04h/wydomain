@@ -5,7 +5,7 @@
 
 import re
 import logging
-from common import curl_get_content, is_domain
+from common import curl_get_content, http_request_get, is_domain
 
 class Threatminer(object):
     """docstring for Threatminer"""
@@ -18,7 +18,8 @@ class Threatminer(object):
     def run(self):
         try:
             url = "{0}/getData.php?e=subdomains_container&q={1}&t=0&rt=10&p=1".format(self.website, self.domain)
-            content = curl_get_content(url).get('resp')
+            # content = curl_get_content(url).get('resp')
+            content = http_request_get(url).content
 
             _regex = re.compile(r'(?<=<a href\="domain.php\?q=).*?(?=">)')
             for sub in _regex.findall(content):

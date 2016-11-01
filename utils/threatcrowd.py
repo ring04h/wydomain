@@ -6,7 +6,7 @@
 import re
 import json
 import logging
-from common import curl_get_content, is_domain
+from common import curl_get_content, http_request_get, is_domain
 
 class Threatcrowd(object):
     """docstring for Threatcrowd"""
@@ -19,7 +19,8 @@ class Threatcrowd(object):
     def run(self):
         try:
             url = "{0}/searchApi/v2/domain/report/?domain={1}".format(self.website, self.domain)
-            content = curl_get_content(url).get('resp')
+            # content = curl_get_content(url).get('resp')
+            content = http_request_get(url).content
 
             for sub in json.loads(content).get('subdomains'):
                 if is_domain(sub):
