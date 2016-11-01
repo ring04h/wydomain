@@ -34,11 +34,11 @@ class Chaxunla(object):
                 for item in result.get('data'):
                     if is_domain(item.get('domain')):
                         self.subset.append(item.get('domain'))
-                return list(set(self.subset))
             elif result.get('status') == 3:
                 print('get verify_code():', self.verify)
                 self.verify_code()
                 self.run()
+            return list(set(self.subset))
         except Exception as e:
             logging.info(str(e))
             return self.subset
