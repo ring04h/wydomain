@@ -33,7 +33,7 @@ optional arguments:
 * dnspod.csv   
 > dnspod.com 官方提供的top 2000条子域名字典.   
  
-* wydomian.csv   
+* wydomain.csv   
 > wyodmian 1.0 的top 3000子域名字典 (非常高效)   
     
 * wydomian 1.0 大字典   
