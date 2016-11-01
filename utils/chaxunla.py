@@ -35,9 +35,11 @@ class Chaxunla(object):
                     if is_domain(item.get('domain')):
                         self.subset.append(item.get('domain'))
             elif result.get('status') == 3:
-                print('get verify_code():', self.verify)
-                self.verify_code()
-                self.run()
+                logging.info("chaxun.la api block you ip...")
+                logging.info("input you verify_code in http://subdomain.chaxun.la/wuyun.org/")
+                # print('get verify_code():', self.verify)
+                # self.verify_code()
+                # self.run()
             return list(set(self.subset))
         except Exception as e:
             logging.info(str(e))
