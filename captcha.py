@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 import json
+import time
 import requests
 
 class Captcha(object):
