@@ -1,0 +1,15 @@
+[
+    "C=CN, ST=Beijing, L=Beijing, O=Sina.com Technology(China)Co.,ltd, OU=Sina.com Technology(China)Co.,ltd, CN=*.sc.weibo.com", 
+    "C=CN, ST=Beijing, L=Beijing, O=Sina.Com Technology (China) Co.,Ltd, OU=Sina.Com Technology (China) Co.,Ltd, CN=*.service.weibo.com", 
+    "OU=Domain Control Validated, CN=weibo.com", 
+    "OU=Domain Control Validated, CN=yahoo.tw.weibo.com", 
+    "OU=Domain Control Validated, CN=widget.tw.weibo.com", 
+    "C=CN, ST=Beijing, L=Beijing, O=Sina.com Technology(China)Co.,ltd, OU=Sina.com Technology(China)Co.,ltd, CN=*.api.weibo.com", 
+    "OU=Domain Control Validated, OU=EssentialSSL, CN=hk.weibo.com", 
+    "C=CN, ST=Beijing, L=Beijing, O=Sina.com Technology(China)Co.,ltd, CN=*.weibo.com", 
+    "C=US, L=San Jose, ST=California, O=CDNetworks Inc., CN=ssl.cdngc.net", 
+    "serialNumber=eV-XT4jYxaF9xoG-x0Y8T7OugGHIWAl-, C=CN, ST=Beijing, L=Beijing, O=Sina.com Technology(China)Co.,ltd, OU=Sina Weibo -Platform, CN=*.api.weibo.com", 
+    "serialNumber=kRDiwnZ1xCERAHgRCmvjUYLhlEfI2hJH, C=CN, ST=Beijing, L=Beijing, O=Sina.com Technology(China)Co.,ltd, OU=Sina Weibo - Platform, CN=*.weibo.com", 
+    "C=US, ST=California, L=San Jose, O=CDNetworks Inc., CN=ssl.cdngc.net", 
+    "OU=Domain Control Validated, OU=EssentialSSL, CN=tbapi.hk.weibo.com"
+]
