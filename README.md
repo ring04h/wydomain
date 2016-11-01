@@ -24,18 +24,19 @@ optional arguments:
   -f , --file     subdomains dict file name
   -o , --out      result out file
 ```
-### 1.0  字典说明
-* default.csv    
-top 200 子域名字典.   
-
-* dnspod.csv   
-dnspod.com 官方提供的top 2000条子域名字典.   
-
-* wydomian.csv   
-wyodmian 1.0 的top 3000子域名字典 (非常高效)   
    
-* wydomian 1.0 大字典   
-https://github.com/ring04h/wydomain/blob/master/domain_larger.csv 
+字典说明   
+> * default.csv    
+> top 200 子域名字典.   
+> 
+> * dnspod.csv   
+> dnspod.com 官方提供的top 2000条子域名字典.   
+> 
+> * wydomian.csv   
+> wyodmian 1.0 的top 3000子域名字典 (非常高效)   
+>    
+> * wydomian 1.0 大字典   
+> https://github.com/ring04h/wydomain/blob/master/domain_larger.csv 
    
 ### 1.1 实际使用演示
 子域名字典穷举结果保存在 result/aliyun.com 目录下的 dnsburte.json 文件。   
