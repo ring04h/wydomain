@@ -225,6 +225,7 @@ def run(args):
     domain = args.domain
     thread_cnt = int(args.thread)
     dict_file = args.file
+    outfile = args.out
 
     if not domain:
         print('usage: dnsburte.py -d aliyun.com')
@@ -245,7 +246,11 @@ def run(args):
     _cache_file = os.path.join(_cache_path, 'dnsburte.json')
     save_result(_cache_file, subdomains)
 
+    _outfile_file = os.path.join(outfile)
+    save_result(_outfile_file, subdomains)    
+
     logging.info("dns bruteforce subdomains({0}) successfully...".format(len(subdomains)))
+    logging.info("result save in : {0}".format(outfile))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="wydomian v 2.0 to bruteforce subdomains of your target domain.")
@@ -255,7 +260,7 @@ if __name__ == '__main__':
         help="domain name")
     parser.add_argument("-f","--file",metavar="",default="default.csv",
         help="subdomains dict file name")
-    parser.add_argument("-o","--out",metavar="",default="result.lst",
+    parser.add_argument("-o","--out",metavar="",default="bruteforce.log",
         help="result out file")
     args = parser.parse_args()
 
