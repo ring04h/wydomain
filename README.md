@@ -2,6 +2,9 @@
 To Discover Subdomains Of Your Target Domain
 
 ## 使用帮助
+### 提示
+记得每次运行前git pull一下，有空的话都会修bug.   
+   
 ### 库依赖安装
 ```
 $ pip install -r requirements.txt	
