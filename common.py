@@ -10,7 +10,9 @@ import logging
 
 import requests as requests
 import requests as __requests__
-from tldextract import extract, TLDExtract
+
+# from tldextract import extract, TLDExtract
+
 from utils.fileutils import FileUtils
 
 import requests.packages.urllib3
