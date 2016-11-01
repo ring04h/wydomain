@@ -43,9 +43,10 @@ optional arguments:
 子域名字典穷举结果保存在 result/aliyun.com 目录下的 dnsburte.json 文件。   
    
 ```
-$ python dnsburte.py -d aliyun.com
+$ python dnsburte.py -d aliyun.com -f dnspod.csv -o aliyun.log
 2016-11-01 13:01:02,327 [INFO] starting bruteforce threading(16) : aliyun.com
 2016-11-01 13:02:15,985 [INFO] dns bruteforce subdomains(51) successfully...
+2016-11-01 15:03:43,367 [INFO] result save in : aliyun.log
 ```
    
 ### 2. 使用API查询目标的子域名
