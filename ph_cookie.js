@@ -1,5 +1,5 @@
 var page = require('webpage').create();
-url = 'http://searchdns.netcraft.com/?restriction=site+contains&host=80vul.com&lookup=wait..&position=limited'
+url = 'http://searchdns.netcraft.com/?restriction=site+contains&host=wuyun.org&lookup=wait..&position=limited'
 page.open(url, function(status) {
   var cookie = page.evaluate(function() {
     return document.cookie;
