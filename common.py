@@ -80,12 +80,11 @@ def curl_get_content(url):
         pass
 
 def save_result(filename, args):
-    if FileUtils.exists(filename):
-        try:
-            fd = open(filename, 'w')
-            json.dump(args, fd, indent=4)
-        finally:
-            fd.close()
+    try:
+        fd = open(filename, 'w')
+        json.dump(args, fd, indent=4)
+    finally:
+        fd.close()
 
 def read_json(filename):
     if FileUtils.exists(filename):
