@@ -39,63 +39,63 @@ def run(args):
     if not os.path.exists(_cache_path):
         os.makedirs(_cache_path, 0777)
 
-    # # alexa result json file
-    # logging.info("starting alexa fetcher...")
-    # _cache_file = os.path.join(_cache_path, 'alexa.json')
-    # result = Alexa(domain=domain).run()
-    # save_result(_cache_file, result)
-    # logging.info("alexa fetcher subdomains({0}) successfully...".format(len(result)))
+    # alexa result json file
+    logging.info("starting alexa fetcher...")
+    _cache_file = os.path.join(_cache_path, 'alexa.json')
+    result = Alexa(domain=domain).run()
+    save_result(_cache_file, result)
+    logging.info("alexa fetcher subdomains({0}) successfully...".format(len(result)))
 
-    # # threatminer result json file
-    # logging.info("starting threatminer fetcher...")
-    # _cache_file = os.path.join(_cache_path, 'threatminer.json')
-    # result = Threatminer(domain=domain).run()
-    # save_result(_cache_file, result)
-    # logging.info("threatminer fetcher subdomains({0}) successfully...".format(len(result)))
+    # threatminer result json file
+    logging.info("starting threatminer fetcher...")
+    _cache_file = os.path.join(_cache_path, 'threatminer.json')
+    result = Threatminer(domain=domain).run()
+    save_result(_cache_file, result)
+    logging.info("threatminer fetcher subdomains({0}) successfully...".format(len(result)))
 
-    # # threatcrowd result json file
-    # logging.info("starting threatcrowd fetcher...")
-    # _cache_file = os.path.join(_cache_path, 'threatcrowd.json')
-    # result = Threatcrowd(domain=domain).run()
-    # save_result(_cache_file, result)
-    # logging.info("threatcrowd fetcher subdomains({0}) successfully...".format(len(result)))
+    # threatcrowd result json file
+    logging.info("starting threatcrowd fetcher...")
+    _cache_file = os.path.join(_cache_path, 'threatcrowd.json')
+    result = Threatcrowd(domain=domain).run()
+    save_result(_cache_file, result)
+    logging.info("threatcrowd fetcher subdomains({0}) successfully...".format(len(result)))
 
-    # # sitedossier result json file
-    # logging.info("starting sitedossier fetcher...")
-    # _cache_file = os.path.join(_cache_path, 'sitedossier.json')
-    # result = Sitedossier(domain=domain).run()
-    # save_result(_cache_file, result)
-    # logging.info("sitedossier fetcher subdomains({0}) successfully...".format(len(result)))
+    # sitedossier result json file
+    logging.info("starting sitedossier fetcher...")
+    _cache_file = os.path.join(_cache_path, 'sitedossier.json')
+    result = Sitedossier(domain=domain).run()
+    save_result(_cache_file, result)
+    logging.info("sitedossier fetcher subdomains({0}) successfully...".format(len(result)))
 
-    # # netcraft result json file
-    # logging.info("starting netcraft fetcher...")
-    # _cache_file = os.path.join(_cache_path, 'netcraft.json')
-    # result = Netcraft(domain=domain).run()
-    # save_result(_cache_file, result)
-    # logging.info("netcraft fetcher subdomains({0}) successfully...".format(len(result)))
+    # netcraft result json file
+    logging.info("starting netcraft fetcher...")
+    _cache_file = os.path.join(_cache_path, 'netcraft.json')
+    result = Netcraft(domain=domain).run()
+    save_result(_cache_file, result)
+    logging.info("netcraft fetcher subdomains({0}) successfully...".format(len(result)))
 
-    # # ilinks result json file
-    # logging.info("starting ilinks fetcher...")
-    # _cache_file = os.path.join(_cache_path, 'ilinks.json')
-    # result = Ilinks(domain=domain).run()
-    # save_result(_cache_file, result)
-    # logging.info("ilinks fetcher subdomains({0}) successfully...".format(len(result)))
+    # ilinks result json file
+    logging.info("starting ilinks fetcher...")
+    _cache_file = os.path.join(_cache_path, 'ilinks.json')
+    result = Ilinks(domain=domain).run()
+    save_result(_cache_file, result)
+    logging.info("ilinks fetcher subdomains({0}) successfully...".format(len(result)))
 
-    # # chaxunla result json file
-    # logging.info("starting chaxunla fetcher...")
-    # _cache_file = os.path.join(_cache_path, 'chaxunla.json')
-    # result = Chaxunla(domain=domain).run()
-    # save_result(_cache_file, result)
-    # logging.info("chaxunla fetcher subdomains({0}) successfully...".format(len(result)))
+    # chaxunla result json file
+    logging.info("starting chaxunla fetcher...")
+    _cache_file = os.path.join(_cache_path, 'chaxunla.json')
+    result = Chaxunla(domain=domain).run()
+    save_result(_cache_file, result)
+    logging.info("chaxunla fetcher subdomains({0}) successfully...".format(len(result)))
 
-    # # google TransparencyReport result json file
-    # logging.info("starting google TransparencyReport fetcher...")
-    # result = TransparencyReport(domain=domain).run()
-    # _cache_file = os.path.join(_cache_path, 'googlect_subject.json')
-    # save_result(_cache_file, result.get('subjects'))
-    # _cache_file = os.path.join(_cache_path, 'googlect_dnsnames.json')
-    # save_result(_cache_file, result.get('dns_names'))
-    # logging.info("google TransparencyReport fetcher subdomains({0}) successfully...".format(len(result.get('dns_names'))))
+    # google TransparencyReport result json file
+    logging.info("starting google TransparencyReport fetcher...")
+    result = TransparencyReport(domain=domain).run()
+    _cache_file = os.path.join(_cache_path, 'googlect_subject.json')
+    save_result(_cache_file, result.get('subjects'))
+    _cache_file = os.path.join(_cache_path, 'googlect_dnsnames.json')
+    save_result(_cache_file, result.get('dns_names'))
+    logging.info("google TransparencyReport fetcher subdomains({0}) successfully...".format(len(result.get('dns_names'))))
 
     # Collection API Subdomains
     sub_files = [
