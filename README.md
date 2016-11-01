@@ -26,16 +26,17 @@ optional arguments:
 ```
    
 字典说明   
-> default.csv    
+   
+* default.csv       
 > top 200 子域名字典.   
-> 
-> dnspod.csv   
+ 
+* dnspod.csv   
 > dnspod.com 官方提供的top 2000条子域名字典.   
-> 
-> wydomian.csv   
+ 
+* wydomian.csv   
 > wyodmian 1.0 的top 3000子域名字典 (非常高效)   
->    
-> wydomian 1.0 大字典   
+    
+* wydomian 1.0 大字典   
 > https://github.com/ring04h/wydomain/blob/master/domain_larger.csv 
    
 ### 1.1 实际使用演示
