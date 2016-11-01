@@ -7,7 +7,7 @@ To Discover Subdomains Of Your Target Domain
 $ pip install -r requirements.txt	
 ```
 
-### 先使用字典穷举目标的子域名
+### 1. 先使用字典穷举目标的子域名
 ```
 $ python dnsburte.py -h
 usage: dnsburte.py [-h] [-t] [-d] [-f] [-o]
@@ -22,7 +22,7 @@ optional arguments:
   -o , --out      result out file
 ```
 
-#### 实际使用演示
+#### 1.1 实际使用演示
 子域名字典穷举结果保存在 result/aliyun.com 目录下的 dnsburte.json 文件。   
    
 ```
@@ -31,7 +31,7 @@ $ python dnsburte.py -d aliyun.com
 2016-11-01 13:02:15,985 [INFO] dns bruteforce subdomains(51) successfully...
 ```
    
-### 使用API查询目标的子域名
+### 2. 使用API查询目标的子域名
 各个API查询的结果保存在 result/aliyun.com 目录下 对应的json文件中。   
    
 ```
@@ -46,5 +46,5 @@ optional arguments:
   -o , --out      result out file
 ```
 
-### 结果
+### 3. 查看结果
 domains.log 为最终的子域名结果集合。
