@@ -5,6 +5,9 @@ To Discover Subdomains Of Your Target Domain
 ### 提示
 记得每次运行前git pull一下，有空的话都会修bug.   
    
+chaxun.la api 会针对请求频率过高的ip，需要人工输入验证码，代码自带了 云速打码 自动识别验证码，但是多人公用账号，导致我的账号被封禁了，所以临时禁用了人机绕过功能，如果需要开启，你们可以注册使用自己账号。   
+https://github.com/ring04h/wydomain/blob/wydomain2/captcha.py   
+   
 ### 库依赖安装
 ```
 $ pip install -r requirements.txt	
