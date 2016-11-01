@@ -64,10 +64,10 @@ optional arguments:
 ### 3. 查看结果
 domains.log 为最终的子域名结果集合。   
    
-阿里云 aliyun.com 子域名结果   
-https://github.com/ring04h/wydomain/tree/wydomain2/result/aliyun.com   
-https://github.com/ring04h/wydomain/blob/wydomain2/domains.log   
+阿里云 aliyun.com 子域名结果    
+https://github.com/ring04h/wydomain/tree/wydomain2/result/aliyun.com    
+https://github.com/ring04h/wydomain/blob/wydomain2/domains.log    
    
-微博 weibo.com 子域名结果
+微博 weibo.com 子域名结果   
 https://github.com/ring04h/wydomain/tree/wydomain2/result/weibo.com
 https://github.com/ring04h/wydomain/blob/wydomain2/weibo_domains.log   
