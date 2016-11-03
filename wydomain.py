@@ -35,7 +35,8 @@ def run(args):
         sys.exit(1)
 
     # init _cache_path
-    _cache_path = os.path.join(os.path.dirname(__file__), 'result/{0}'.format(domain))
+    script_path = os.path.dirname(os.path.abspath(__file__))
+    _cache_path = os.path.join(script_path, 'result/{0}'.format(domain))
     if not os.path.exists(_cache_path):
         os.makedirs(_cache_path, 0777)
 
@@ -131,7 +132,7 @@ def run(args):
 
     # save all subdomains to outfile
     subdomains = list(set(subdomains))
-    _result_file = os.path.join(outfile)
+    _result_file = os.path.join(script_path, outfile)
     save_result(_result_file, subdomains)
     logging.info("{0} {1} subdomains save to {2}".format(
         domain, len(subdomains), _result_file))
