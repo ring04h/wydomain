@@ -30,8 +30,6 @@ optional arguments:
   -o , --out      result out file
 ```
    
-字典说明   
-   
 | 字典名称 | 说明 |
 | --- | --- |
 | default.csv | top 200 子域名字典 |

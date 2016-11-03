@@ -20,7 +20,7 @@ from common import save_result
 from utils.fileutils import FileUtils
 
 logging.basicConfig(
-    level=logging.INFO, # filename='/tmp/wydomain.log',
+    level=logging.INFO, 
     format='%(asctime)s [%(levelname)s] %(message)s',
 )
 
@@ -232,7 +232,8 @@ def run(args):
         sys.exit(1)
 
     # init _cache_path
-    _cache_path = os.path.join(os.path.dirname(__file__), 'result/{0}'.format(domain))
+    script_path = os.path.dirname(os.path.abspath(__file__))
+    _cache_path = os.path.join(script_path, 'result/{0}'.format(domain))
     if not os.path.exists(_cache_path):
         os.makedirs(_cache_path, 0777)
 
@@ -246,7 +247,8 @@ def run(args):
     _cache_file = os.path.join(_cache_path, 'dnsburte.json')
     save_result(_cache_file, subdomains)
 
-    _outfile_file = os.path.join(outfile)
+    script_path = os.path.dirname(os.path.abspath(__file__))
+    _outfile_file = os.path.join(script_path, outfile)
     save_result(_outfile_file, subdomains)    
 
     logging.info("dns bruteforce subdomains({0}) successfully...".format(len(subdomains)))
