@@ -252,7 +252,7 @@ def run(args):
     save_result(_outfile_file, subdomains)    
 
     logging.info("dns bruteforce subdomains({0}) successfully...".format(len(subdomains)))
-    logging.info("result save in : {0}".format(outfile))
+    logging.info("result save in : {0}".format(_outfile_file))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="wydomian v 2.0 to bruteforce subdomains of your target domain.")
