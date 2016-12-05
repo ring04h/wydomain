@@ -114,7 +114,7 @@ class Domain(object):
             return None # catch the except, nothing to do
         except dns.resolver.Timeout:
             # timeout retry
-            print(target, tdtype, '<timeout>')
+            print(target, rdtype, '<timeout>')
         except Exception, e:
             raise e
             logging.info(str(e))
