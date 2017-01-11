@@ -96,7 +96,12 @@ class FileUtils(object):
     def getLines(fileName):
         with open(fileName, 'r') as fd:
             for line in fd.readlines():
-                yield line.replace('\n', '')
+                if line.endswith('\n'):
+                    yield line.replace('\n', '')
+                elif line.endswith('\r\n'):
+                    yield line.replace('\r\n', '')
+                else:
+                    yield line
 
     @staticmethod
     def isDir(fileName):
