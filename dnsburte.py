@@ -8,6 +8,7 @@ import os
 import sys
 import json
 import Queue
+import random
 import logging
 import argparse
 import threading
@@ -23,6 +24,19 @@ logging.basicConfig(
     level=logging.INFO, 
     format='%(asctime)s [%(levelname)s] %(message)s',
 )
+
+nameservers = [
+    '114.114.114.114',
+    '119.29.29.29',
+    '223.5.5.5',
+    '8.8.8.8',
+    '182.254.116.116',
+    '223.6.6.6',
+    '8.8.4.4',
+    '180.76.76.76',
+    '216.146.35.35',
+    '123.125.81.6',
+    '218.30.118.6']
 
 class Domain(object):
     """docstring for Domain base class"""
@@ -106,6 +120,7 @@ class Domain(object):
 
     def query(self, target, rdtype):
         try:
+            self.resolver.nameservers = [random.choice(nameservers),random.choice(nameservers)]
             answer = self.resolver.query(target, rdtype)
             return self.parser(answer)
         except dns.resolver.NoAnswer:
@@ -116,7 +131,6 @@ class Domain(object):
             # timeout retry
             print(target, rdtype, '<timeout>')
         except Exception, e:
-            raise e
             logging.info(str(e))
 
     def brute(self, target, ret=False):
@@ -126,6 +140,7 @@ class Domain(object):
         @param ret              return result flag
         """
         try:
+            self.resolver.nameservers = [random.choice(nameservers),random.choice(nameservers)]
             if not ret: # return_flag set false, using dns original query func
                 if self.resolver.query(target, 'A'):
                     return True
