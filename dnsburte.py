@@ -38,7 +38,7 @@ nameservers = [
 
 class Domain(object):
     """docstring for Domain base class"""
-    def __init__(self, nameservers=[], timeout=""):
+    def __init__(self, nameservers=nameservers, timeout=4):
         super(Domain, self).__init__()
         self.recursion = {}
         self.resolver = dns.resolver.Resolver()
@@ -174,7 +174,7 @@ class DomainFuzzer(object):
         super(DomainFuzzer, self).__init__()
         self.target = target
         self.dict = FileUtils.getLines(dict_file)
-        self.resolver = Domain(nameservers, timeout=3)
+        self.resolver = Domain(nameservers=nameservers, timeout=4)
 
     def run(self, thread_cnt=16):
         iqueue, oqueue = Queue.Queue(), Queue.Queue()
