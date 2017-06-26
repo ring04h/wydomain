@@ -29,21 +29,14 @@ nameservers = [
     '114.114.114.114', '119.29.29.29', '223.5.5.5', '114.114.115.115', '8.8.8.8', '182.254.116.116',
     '223.6.6.6', '1.2.4.8', '101.226.4.6', '180.76.76.76', '216.146.35.35', '123.125.81.6', '218.30.118.6',
     '202.96.128.86', '202.96.128.166', '202.96.134.33', '202.96.128.68',
-    '219.141.136.10', '219.141.140.10', '202.96.209.133', '116.228.111.118',
-    '202.96.209.5', '108.168.255.118', '202.101.172.35', '61.153.177.196'
-    '61.153.81.75', '60.191.244.5', '202.106.196.115', '202.106.46.151',
-    '202.106.0.20', '202.106.195.68', '218.2.2.2', '218.4.4.4',
-    '221.131.143.69', '112.4.0.55', '61.147.37.1', '218.2.135.1'
+    '219.141.136.10', '219.141.140.10', '202.96.209.133', '116.228.111.118'
 ]
 
 class Domain(object):
     """docstring for Domain base class"""
-    def __init__(self, nameservers=nameservers, timeout=4):
-        super(Domain, self).__init__()
+    def __init__(self, timeout=5):
         self.recursion = {}
         self.resolver = dns.resolver.Resolver()
-        if nameservers:
-            self.resolver.nameservers = nameservers
         if timeout:
             self.resolver.timeout = timeout
             self.resolver.lifetime = timeout
@@ -174,7 +167,7 @@ class DomainFuzzer(object):
         super(DomainFuzzer, self).__init__()
         self.target = target
         self.dict = FileUtils.getLines(dict_file)
-        self.resolver = Domain(nameservers=nameservers, timeout=4)
+        self.resolver = Domain(timeout=5)
 
     def run(self, thread_cnt=16):
         iqueue, oqueue = Queue.Queue(), Queue.Queue()
