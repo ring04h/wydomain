@@ -151,16 +151,16 @@ class Domain(object):
             logging.info(str(e))
             return False
 
-def extensive(self, target):
-    (ehost, esets) = ['wyspider{0}.{1}'.format(i, target) for i in range(3)], []
-    for host in ehost:
-        try:
-            record = self.query(host, 'A')
-            if record is not None:
-                esets.extend(record['A'])
-        except Exception:
-            pass
-    return esets
+    def extensive(self, target):
+        (ehost, esets) = ['wyspider{0}.{1}'.format(i, target) for i in range(3)], []
+        for host in ehost:
+            try:
+                record = self.query(host, 'A')
+                if record is not None:
+                    esets.extend(record['A'])
+            except Exception:
+                pass
+        return esets
 
 class DomainFuzzer(object):
     """docstring for DomainFuzzer with brute force"""
