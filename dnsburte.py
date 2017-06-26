@@ -163,11 +163,10 @@ class Domain(object):
 
 class DomainFuzzer(object):
     """docstring for DomainFuzzer with brute force"""
-    def __init__(self, target, dict_file='domain.csv'):
-        super(DomainFuzzer, self).__init__()
+    def __init__(self, target, dict_file='domain.csv', timeout=5):
         self.target = target
         self.dict = FileUtils.getLines(dict_file)
-        self.resolver = Domain(timeout=5)
+        self.resolver = Domain(timeout=timeout)
 
     def run(self, thread_cnt=16):
         iqueue, oqueue = Queue.Queue(), Queue.Queue()
@@ -220,6 +219,7 @@ class DomainFuzzer(object):
 def run(args):
     domain = args.domain
     thread_cnt = int(args.thread)
+    timeout = int(args.timeout)
     dict_file = args.file
     outfile = args.out
 
@@ -234,7 +234,7 @@ def run(args):
         os.makedirs(_cache_path, 0777)
 
     subdomains = []
-    dnsfuzz = DomainFuzzer(target=domain, dict_file=dict_file)
+    dnsfuzz = DomainFuzzer(target=domain, dict_file=dict_file, timeout=timeout)
 
     logging.info("starting bruteforce threading({0}) : {1}".format(thread_cnt, domain))
     for subname in dnsfuzz.run(thread_cnt=thread_cnt):
@@ -254,6 +254,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="wydomian v 2.0 to bruteforce subdomains of your target domain.")
     parser.add_argument("-t","--thread",metavar="",default=16,
         help="thread count")
+    parser.add_argument("-time","--timeout",metavar="",default=5,
+        help="query timeout")
     parser.add_argument("-d","--domain",metavar="",
         help="domain name")
     parser.add_argument("-f","--file",metavar="",default="default.csv",
