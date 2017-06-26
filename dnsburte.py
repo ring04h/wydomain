@@ -26,17 +26,15 @@ logging.basicConfig(
 )
 
 nameservers = [
-    '114.114.114.114',
-    '119.29.29.29',
-    '223.5.5.5',
-    '8.8.8.8',
-    '182.254.116.116',
-    '223.6.6.6',
-    '8.8.4.4',
-    '180.76.76.76',
-    '216.146.35.35',
-    '123.125.81.6',
-    '218.30.118.6']
+    '114.114.114.114', '119.29.29.29', '223.5.5.5', '114.114.115.115', '8.8.8.8', '182.254.116.116',
+    '223.6.6.6', '1.2.4.8', '101.226.4.6', '180.76.76.76', '216.146.35.35', '123.125.81.6', '218.30.118.6',
+    '202.96.128.86', '202.96.128.166', '202.96.134.33', '202.96.128.68',
+    '219.141.136.10', '219.141.140.10', '202.96.209.133', '116.228.111.118',
+    '202.96.209.5', '108.168.255.118', '202.101.172.35', '61.153.177.196'
+    '61.153.81.75', '60.191.244.5', '202.106.196.115', '202.106.46.151',
+    '202.106.0.20', '202.106.195.68', '218.2.2.2', '218.4.4.4',
+    '221.131.143.69', '112.4.0.55', '61.147.37.1', '218.2.135.1'
+]
 
 class Domain(object):
     """docstring for Domain base class"""
@@ -44,8 +42,11 @@ class Domain(object):
         super(Domain, self).__init__()
         self.recursion = {}
         self.resolver = dns.resolver.Resolver()
-        if nameservers: self.resolver.nameservers = nameservers
-        if timeout: self.resolver.timeout = timeout
+        if nameservers:
+            self.resolver.nameservers = nameservers
+        if timeout:
+            self.resolver.timeout = timeout
+            self.resolver.lifetime = timeout
 
     def get_type_name(self, typeid):
         return dns.rdatatype.to_text(typeid)
@@ -140,7 +141,6 @@ class Domain(object):
         @param ret              return result flag
         """
         try:
-            self.resolver.nameservers = [random.choice(nameservers),random.choice(nameservers)]
             if not ret: # return_flag set false, using dns original query func
                 if self.resolver.query(target, 'A'):
                     return True
@@ -174,19 +174,7 @@ class DomainFuzzer(object):
         super(DomainFuzzer, self).__init__()
         self.target = target
         self.dict = FileUtils.getLines(dict_file)
-        self.nameservers = [
-                    '114.114.114.114',
-                    '119.29.29.29',
-                    '223.5.5.5',
-                    '8.8.8.8',
-                    '182.254.116.116',
-                    '223.6.6.6',
-                    '8.8.4.4',
-                    '180.76.76.76',
-                    '216.146.35.35',
-                    '123.125.81.6',
-                    '218.30.118.6',]
-        self.resolver = Domain(self.nameservers, timeout=5)
+        self.resolver = Domain(nameservers, timeout=3)
 
     def run(self, thread_cnt=16):
         iqueue, oqueue = Queue.Queue(), Queue.Queue()
